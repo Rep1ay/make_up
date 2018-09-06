@@ -9,6 +9,7 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { ProductDiscountComponent } from '../product-discount/product-discount.component';
 import { AuthGuard } from '../auth.guard';
+import { AdminPanelComponent } from '../admin-panel/admin-panel.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo : '/products', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
   { path: 'login', component : LoginComponent},
   { path: 'register', component : RegisterComponent},
   { path: 'productDiscount', component : ProductDiscountComponent},
+  { path: 'adminPanel', component: AdminPanelComponent}
   // {path: '*', component: PageNotFoundComponent}
 ];
 

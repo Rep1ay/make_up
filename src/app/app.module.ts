@@ -18,6 +18,8 @@ import { ProductDiscountComponent } from './product-discount/product-discount.co
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { DiscountComponent } from './discount/discount.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -32,16 +34,18 @@ import { DiscountComponent } from './discount/discount.component';
     LoginComponent,
     SpecialProductsComponent,
     ProductDiscountComponent,
-    DiscountComponent
+    DiscountComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
-  providers: [HttpClientModule, AuthService, AuthGuard,{
+  providers: [HttpClientModule, AuthService, AuthGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

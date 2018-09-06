@@ -4,3 +4,7 @@
     left: 100px;
     z-index: 9999;
 }
+.btnBox{
+    display: flex;
+    justify-content: space-evenly;
+}

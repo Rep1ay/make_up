@@ -52,7 +52,6 @@ export class ProductsComponent implements OnInit {
     console.error(error);
   }
   getDiscount() {
-    debugger
     if (this.loggedIn) {
       if (this.activePromoCode) {
         this.router.navigate(['/productDiscount']);
@@ -63,6 +62,7 @@ export class ProductsComponent implements OnInit {
        this.router.navigate(['/login']);
     }
   }
+
   showPromoBoxFunc(box) {
     box.classList.toggle('show');
   }

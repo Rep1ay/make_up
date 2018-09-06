@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../products.service';
 import { AuthService } from '../auth.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { faUser  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +11,7 @@ import { AuthService } from '../auth.service';
 })
 export class NavbarComponent implements OnInit {
   productCollection: any;
+  faUser  = faUser;
   constructor(private productService: ProductsService,
               private _authService: AuthService) { }
 
