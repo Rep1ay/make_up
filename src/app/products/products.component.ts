@@ -35,6 +35,7 @@ export class ProductsComponent implements OnInit {
     //   this.showPromoBox = false;
     // });
     this.activePromoCode = this._auth.activePromoCode();
+    this.loggedIn = this._auth.loggedIn();
     this.showPreloader = true;
     this.productService.getProducts().subscribe(
       (data) => {this.productsCollection = data;
@@ -52,11 +53,14 @@ export class ProductsComponent implements OnInit {
   }
   getDiscount() {
     debugger
-    if (this.activePromoCode) {
-      this.router.navigate(['/productDiscount']);
+    if (this.loggedIn) {
+      if (this.activePromoCode) {
+        this.router.navigate(['/productDiscount']);
+      } else {
+        this.showPromoBox = true;
+      }
     } else {
-      this.showPromoBox = true;
-      // this.router.navigate(['/login']);
+       this.router.navigate(['/login']);
     }
   }
   showPromoBoxFunc(box) {
