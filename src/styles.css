@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.hidden{
+    opacity: 0;
+    transition: margin-top 0.5s ease-out;
+    transition: opacity 1s ease-out;
+}
+.show{
+    opacity: 1;
+    transition: margin-top 0.3s ease-in;
+    transition: opacity 0.5s ease-in;
+}
