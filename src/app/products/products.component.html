@@ -1,0 +1,47 @@
+<app-preloader *ngIf="showPreloader"></app-preloader>
+<!-- <app-filter-bar></app-filter-bar> -->
+<div #box class="promoBox hidden">
+    <app-discount></app-discount>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- <h1>MakeUp Api</h1> -->
+    <!-- (click) = 'onSelect(product.id)' -->
+    <div class="col-md-4 single_product box foo" *ngFor="let product of productsCollection">
+        <img (click) = 'onSelect(product.id)' class="rounded mx-auto d-block" src="{{product.image_link}}" style="width: 300px;height: 350px;" alt="{{product.name}}">
+        <p (click) = 'onSelect(product.id)' class=" text-center">
+            <span class="product_name" >{{product.name}}</span>
+        </p>
+        <div class="wrap">
+          <div class="topProductLine row d-flex justify-content-around">
+                <p style="text-align: left" id="brand col-md-6">
+                    <span>Brand:</span>
+                    <span style="color: rgba(171, 130, 255, 0.75)"> {{product.brand}}</span>
+                </p>
+                <p style="text-align: right" id="price col-md-6">
+                    <span>Price:</span>
+                    <span style="color: rgba(171, 130, 255, 0.75)"> ${{product.price}}</span>
+                    <span (click)="getDiscount()" class="discountSpan" *ngIf="activePromoCode"> -{{discountValue}}%</span>
+                </p>
+          </div>
+          <p *ngIf="product.description" class="description">{{ (product.description.length>4)? (product.description | slice:0:130)+'...':(product.description) }}</p>
+          <p class="trimm"></p>
+        </div>
+        <div class="discountBlock">
+            <div class="">
+                <button (click) = 'onSelect(product.id)' class="productBtn btnInfo" >SHOW MORE</button>
+            </div>
+            <div class="">
+                <button class="productBtn"
+                    (click)="getDiscount(); showPromoBoxFunc(box)" 
+                    [ngClass]="{'discountAnable': activePromoCode, 'discountDisable' : !activePromoCode}">
+                    {{activePromoCode ? "BYE WITH DISCOUNT" : "GET DISCOUNT"}}
+                    {{btnText}}
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

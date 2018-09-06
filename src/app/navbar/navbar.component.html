@@ -1,0 +1,49 @@
+<nav class="main_navbar" style="background-color: #792c9b;">
+  <ul>
+      <!-- <a class="navbar-brand" routerLink="/">MakeUp Api</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <li routerLinkActive="active"  routerLink="/">Home</li>
+    <li routerLinkActive="active"  class="menu_toggle" (click)="showProductsCollection(productCollection)">Products</li>
+    <li routerLinkActive="active" >Contact</li>
+    <li routerLinkActive="active" >Services</li>
+    <li *ngIf='!_authService.loggedIn()' routerLinkActive="active"  routerLink="/login">Login</li>
+    <li *ngIf='!_authService.loggedIn()' routerLinkActive="active"  routerLink="/register">Register</li>
+    <li (click)="_authService.logoutUser()" *ngIf='_authService.loggedIn()' routerLinkActive="active"  routerLink="/register">Logout</li>
+  </ul>
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+</nav>
+<div class="products_collections">
+    <ul class="hidden" #productCollection>
+      <li routerLink="/">Home</li>
+      <li class="menu_toggle">Products</li>
+      <li>Contact</li>
+      <li>Services</li>
+      <li routerLink="/">Home</li>
+      <li class="menu_toggle">Products</li>
+      <li>Contact</li>
+      <li>Services</li>
+    </ul>
+</div>
+
+<nav>
+  
+</nav>
