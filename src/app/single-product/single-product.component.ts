@@ -18,7 +18,6 @@ export class SingleProductComponent implements OnInit {
   constructor(  private _route: ActivatedRoute,
                 private _router: Router,
                 private productService: ProductsService,
-                private productsComponent: ProductsComponent
   ) { }
 
   ngOnInit() {
@@ -30,25 +29,15 @@ export class SingleProductComponent implements OnInit {
     );
   }
   getProducts(res) {
-    // const res = responce.json();
-    for (let i = 0; i < 10; i++) {
-      const product = new SingleProductModel(  res[i].name,
-                                    res[i].brand,
-                                    res[i].price,
-                                    res[i].category,
-                                    res[i].image_link,
-                                    res[i].product_link,
-                                    res[i].description,
-                                    res[i].id);
-    this.productsCollection.push(product);
-    }
-    this.showPreloader = false;
-    this.renderProduct();
+    this.singleProduct = res.find(e => {
+      if(e.id ===  this.id){
+        this.showPreloader = false;
+        return e.id
+      }
+    })
   }
+
   errorHandler(error) {
     console.error(error);
-  }
-  renderProduct() {
-    this.singleProduct = this.productsCollection.find(e => e.id ===  this.id);
   }
 }

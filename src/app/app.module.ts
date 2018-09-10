@@ -20,6 +20,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { DiscountComponent } from './discount/discount.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     SpecialProductsComponent,
     ProductDiscountComponent,
     DiscountComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

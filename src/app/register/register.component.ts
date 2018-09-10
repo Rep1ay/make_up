@@ -19,7 +19,6 @@ export class RegisterComponent implements OnInit {
     // this.registerUserData
     this._auth.registerNewUser(this.registerUserData).subscribe(
       (res) => {
-        console.log(res);
         localStorage.setItem('token', res.token);
         this.router.navigate(['/products']);
       },

@@ -40,24 +40,30 @@
     list-style-type: none;
     font-size: 17px;
     color: #9846bf;
+    border-bottom: 1px solid #8740a71f;
     display: flex;
     background: #fff;
     padding-bottom: 15px;
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
-/* .hidden{
-    margin-top: -130px;
-    opacity: 0;
-    transition: margin-top 0.5s ease-out;
-    transition: opacity 1s ease-out;
+.searchBtn{
+    background: #a844d4;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    height: 34px;
+    padding: 5px;
+    font-size: 16px;
+    box-shadow: 1px 1px 1px 1px #a45dc3;
+    transition: all 0.3s ease-out;
 }
-.show{
-    opacity: 1;
-    margin-top: 0px;
-    transition: margin-top 0.3s ease-in;
-    transition: opacity 0.5s ease-in;
-} */
+.searchBtn:hover{
+    background: #bb5ce4;
+    box-shadow: 2px 1px 3px 1px #9765ad;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
 .products_collections {
     position: absolute;
     width: 100%;
@@ -81,6 +87,11 @@
 .products_collections ul li:hover:after { transform: scaleX(1); }
 .products_collections ul li:after{  transform-origin:  0% 50%; }
 
+.notValid{
+    border: 1px solid #f12e2e;
+    box-shadow: inset 0px 0px 7px 0px #f54949;
+    transition: all 0.5s ease-in-out;
+}
 @media all and (max-width: 800px) {
     .main_navbar ul {
       justify-content: space-around;

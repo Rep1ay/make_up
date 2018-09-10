@@ -10,6 +10,7 @@ import { RegisterComponent } from '../register/register.component';
 import { ProductDiscountComponent } from '../product-discount/product-discount.component';
 import { AuthGuard } from '../auth.guard';
 import { AdminPanelComponent } from '../admin-panel/admin-panel.component';
+import { SearchComponent } from '../search/search.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo : '/products', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   { path: 'login', component : LoginComponent},
   { path: 'register', component : RegisterComponent},
   { path: 'productDiscount', component : ProductDiscountComponent},
-  { path: 'adminPanel', component: AdminPanelComponent}
+  { path: 'adminPanel', component: AdminPanelComponent},
+  { path: 'search', component: SearchComponent}
   // {path: '*', component: PageNotFoundComponent}
 ];
 
