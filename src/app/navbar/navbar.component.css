@@ -1,3 +1,43 @@
+.navbar_container{
+    padding: 10px 0px;
+    transition: all 0.5s ease-out;
+}
+@keyframes fadeIn {
+    from {
+        margin-top: -200px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        margin-top: 0px;
+    }
+    to {
+        margin-top: -200px;
+    }
+}
+
+.fixed_to_top{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    position: fixed;
+}
+
+.fade_out_navbar{
+    margin-top: -200px;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.fade_in_navbar{
+    margin-top: 0px;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
 .main_navbar{
     font-size: 25px;
     color: #e6cff1;
@@ -46,7 +86,8 @@
     padding: 15px 0px;
     width: 100%;
     position: fixed;
-    top: 55px;
+    top: 76px;
+    /* margin-top: 0px; */
     flex-flow: row wrap;
     justify-content: space-evenly;
 }

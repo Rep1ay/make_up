@@ -21,9 +21,3 @@
     background-color: rgb(164, 84, 199);
     text-align: center;
 }
-
-.fixed_to_top{
-    transition: all 1s ease-in;
-    position: fixed;
-    margin-top: 0px;
-}
