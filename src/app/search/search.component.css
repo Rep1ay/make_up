@@ -21,6 +21,7 @@
 .filterItems ul li{
     cursor: pointer;
     padding: 0.5rem;
+    margin: 0 0.2rem;
 }
 .filterItems ul li:hover{
     color: #333;
@@ -45,14 +46,14 @@
     background: #fff;
     padding-bottom: 15px;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
-#mainListElem{
+.mainListElem{
     background: #792c9bc2;
     color: #fff;
     border-radius: 5px;
 }
-#mainListElem:hover{
-    color: #fff;
+.mainListElem:hover{
+    color: #fff !important;
 }

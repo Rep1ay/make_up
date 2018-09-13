@@ -1,12 +1,16 @@
-<nav class="main_navbar" style="background-color: #792c9b;">
-  <ul>
+<nav class="main_navbar">
+  <ul class="navbar_container">
       
-    <!-- <a class="navbar-brand" routerLink="/">MakeUp Api</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" 
+        data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" 
+        aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <form class="form-inline my-2 my-lg-0">
-      <input #formInput class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline col-md-4 my-3 my-lg-0">
+      <input #formInput class="form-control col-md-8 mr-sm-2" type="search" 
+              placeholder="Type title, brand or categorie" 
+              aria-label="Search">
       <button (click)='routeToSearch(formInput)' class="btn my-2 my-sm-0 searchBtn" type="submit">Search</button>
     </form>
     <li routerLinkActive="active"  routerLink="/">Home</li>
@@ -16,7 +20,6 @@
     <li *ngIf='!_authService.loggedIn()' routerLinkActive="active"  routerLink="/login">Login</li>
     <li *ngIf='_authService.loggedIn()' routerLinkActive="active"  routerLink="/adminPanel"><fa-icon [icon]="faUser"></fa-icon></li>
 
-    <!-- <li *ngIf='!_authService.loggedIn()' routerLinkActive="active"  routerLink="/register">Register</li> -->
     <li (click)="_authService.logoutUser()" *ngIf='_authService.loggedIn()' routerLinkActive="active"  routerLink="/register">Logout</li>
   </ul>
 </nav>

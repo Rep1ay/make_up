@@ -31,14 +31,17 @@ export class SearchComponent implements OnInit {
 
   getProducts(res, keyword) {
     this.productsCollection = [];
-    let uniqeBrands = [];
+    const uniqeBrands = [];
 
     res.filter(e => {
-     let filterResult = (string ) => (string.replace(/[^0-9a-z]/g,"").toLowerCase());
+     const filterResult = (string ) => (string.replace(/[^0-9a-z]/g,"").toLowerCase());
       if ((filterResult( e.brand || 'nonBrand').match(filterResult(keyword)))
-          || (filterResult(e.name || 'nonName' ).match(filterResult(keyword))))
+          || (filterResult(e.name || 'nonName' ).match(filterResult(keyword)))
+          || (filterResult(e.product_type || 'nonType' ).match(filterResult(keyword)))
+          || (filterResult(e.category || 'nonType' ).match(filterResult(keyword)))
+        )
       {
-        this._productsCollection.push(e)
+        this._productsCollection.push(e);
         this.productsCollection.push(e);
         uniqeBrands.push(e.brand);
       }
@@ -50,28 +53,27 @@ export class SearchComponent implements OnInit {
     this.getProductsBrands(uniqeBrands);
   }
 
-  getProductsBrands(uniqeBrands){
+  getProductsBrands(uniqeBrands) {
     for ( let i = 0; i < uniqeBrands.length; i++ ){
-      if( uniqeBrands[i] === null) {
-        uniqeBrands.splice(i, 1)
+      if (uniqeBrands[i] === null) {
+        uniqeBrands.splice(i, 1);
       }
     }
     this.productUniqeBrands = [...new Set(uniqeBrands)]
   }
 
-  filterByBrand(brand, input){
-    debugger
+  filterByBrand(brand, input, productsContainer){
     this.productsCollection = this._productsCollection;
     this.filteredBrands = [];
     this.productsCollection.filter(obj => {
-      if( obj.brand === brand){
-        this.filteredBrands.push(obj)
+      if ( obj.brand === brand) {
+        this.filteredBrands.push(obj);
       }
-    })
+    });
     this.productsCollection = this.filteredBrands;
   }
 
-  showAllBrands(){
+  showAllBrands() {
     this.productsCollection = this._productsCollection;
   }
 }

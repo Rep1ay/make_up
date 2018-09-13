@@ -1,10 +1,12 @@
 <div class="filterItems">
   <ul>
-    <li (click)='showAllBrands()' id="mainListElem">Filter By Brand:</li>
-    <li #inputElement (click)='filterByBrand(brand, inputElement)' class="" *ngFor="let brand of productUniqeBrands">{{brand}}</li>
+    <li class="mainListElem">Filter By Brand:</li>
+    <li class="mainListElem" (click)='showAllBrands()'>show all</li>
+    <li #inputElement (click)='filterByBrand(brand, inputElement, productsContainer)' 
+       *ngFor="let brand of productUniqeBrands">{{brand}}</li>
   </ul>
 </div>
-<div class="productsContainer">
+<div #productsContainer class="productsContainer">
   <p>all results by search: {{keyWord}}</p>
   <div *ngFor="let product of productsCollection" class="singleProduct">
     <div><img src="{{product.image_link}}" alt="{{product.name}}"></div>

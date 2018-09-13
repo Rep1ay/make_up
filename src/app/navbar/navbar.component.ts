@@ -22,6 +22,16 @@ export class NavbarComponent implements OnInit {
     // this.productService.getProductParams().subscribe(
     //   (res) => this.renderNavBar(res)
     // );
+    window.addEventListener('scroll', function(e) {
+      // debugger
+      const scrollY = window.scrollY;
+      const navbar = document.querySelector('.navbar_container');
+      if (scrollY > 40) {
+        navbar.classList.add('fixed_to_top');
+      } else {
+        navbar.classList.remove('fixed_to_top');
+      }
+  });
   }
 
   renderNavBar(responce) {
@@ -42,4 +52,6 @@ export class NavbarComponent implements OnInit {
         }, 1000 );
       }
   }
+
+  
 }
