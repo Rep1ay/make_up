@@ -25,8 +25,12 @@
                     <span (click)="getDiscount()" class="discountSpan" *ngIf="activePromoCode"> -{{discountValue}}%</span>
                 </p>
           </div>
-          <p *ngIf="product.description" class="description">{{ (product.description.length>4)? (product.description | slice:0:130)+'...':(product.description) }}</p>
-          <p class="trimm"></p>
+          <!-- <p *ngIf="product.description" class="description">{{ (product.description.length>4)? (product.description | slice:0:130)+'...':(product.description) }}</p>
+          <p class="trimm"></p> -->
+          <div class="description">
+            <p class="categories"> categorie: <span>{{product.category}}</span></p>
+            <p class="categories">product type: <span>{{product.product_type}}</span></p>
+          </div>
         </div>
         <div class="discountBlock">
             <div class="">

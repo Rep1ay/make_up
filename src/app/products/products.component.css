@@ -1,7 +1,7 @@
 .single_product{
     margin: 10px auto;
     padding: 10px 0;
-    min-height: 630px;
+    min-height: 530px;
     /* cursor: pointer; */
 }
 .wrap{
@@ -19,10 +19,13 @@ img.rounded{
     background-image: linear-gradient(#ffffffba, white);
 }
 .description{
+    display: flex;
     color: #8c8c8c;
     font-weight: 300;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
+
 .discountBlock {
     display: flex;
     justify-content: space-around;
