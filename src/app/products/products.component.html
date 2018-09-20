@@ -9,7 +9,7 @@
     <!-- <h1>MakeUp Api</h1> -->
     <!-- (click) = 'onSelect(product.id)' -->
     <div class="col-md-4 single_product box foo" *ngFor="let product of productsCollection">
-        <img (click) = 'onSelect(product.id)' class="rounded mx-auto d-block" src="{{product.image_link}}" style="width: 300px;height: 350px;" alt="{{product.name}}">
+        <img (click) = 'onSelect(product.id)' class="rounded mx-auto d-block" src="{{product.image_link}}" style="width: 250px;height: 300px;" alt="{{product.name}}">
         <p (click) = 'onSelect(product.id)' class=" text-center">
             <span class="product_name" >{{product.name}}</span>
         </p>
