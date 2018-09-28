@@ -7,7 +7,7 @@
   </ul>
 </div>
 <div #productsContainer class="productsContainer">
-  <p>all results by search: {{keyWord}}</p>
+  <p>all results by search ({{productsCollection.length}} products): {{keyWord}}</p>
   <div *ngFor="let product of productsCollection" class="singleProduct">
     <div><img src="{{product.image_link}}" alt="{{product.name}}"></div>
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from '../products.service';
+// import {ProductsService} from '../products.service';
 import { AuthService } from '../auth.service';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { faUser, faDeaf  } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,9 @@ export class NavbarComponent implements OnInit {
   productCollection: any;
   faUser  = faUser;
   formInput: string;
-  constructor(private productService: ProductsService,
+  service: any;
+  constructor(
+    // private productService: ProductsService,
               private _authService: AuthService,
               private route: Router) { }
 
@@ -22,6 +24,7 @@ export class NavbarComponent implements OnInit {
     // this.productService.getProductParams().subscribe(
     //   (res) => this.renderNavBar(res)
     // );
+    this.service = this._authService
     this.navbarBehavior();
 
   }

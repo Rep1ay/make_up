@@ -17,10 +17,10 @@
     <li routerLinkActive="active"  class="menu_toggle" (click)="showProductsCollection(productCollection)">Products</li>
     <li routerLinkActive="active" >Contact</li>
     <li routerLinkActive="active" >Services</li>
-    <li *ngIf='!_authService.loggedIn()' routerLinkActive="active"  routerLink="/login">Login</li>
-    <li *ngIf='_authService.loggedIn()' routerLinkActive="active"  routerLink="/adminPanel"><fa-icon [icon]="faUser"></fa-icon></li>
+    <li *ngIf='!service.loggedIn()' routerLinkActive="active"  routerLink="/login">Login</li>
+    <li *ngIf='service.loggedIn()' routerLinkActive="active"  routerLink="/adminPanel"><fa-icon [icon]="faUser"></fa-icon></li>
 
-    <li (click)="_authService.logoutUser()" *ngIf='_authService.loggedIn()' routerLinkActive="active"  routerLink="/register">Logout</li>
+    <li (click)="service.logoutUser()" *ngIf='service.loggedIn()' routerLinkActive="active"  routerLink="/register">Logout</li>
   </ul>
 </nav>
 <div class="products_collections">

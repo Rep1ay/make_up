@@ -7,6 +7,9 @@
 .wrap{
     padding: 10px;
 }
+.categories span{
+    color: rgba(171, 130, 255, 0.75);
+}
 img.rounded{
     position: relative;
     z-index: 100;
