@@ -34,12 +34,15 @@ export class ProductsComponent implements OnInit {
     // this.route.queryParams.subscribe(params => {
     //   this.showPromoBox = false;
     // });
+   
     this.activePromoCode = this._auth.activePromoCode();
     this.loggedIn = this._auth.loggedIn();
     this.showPreloader = true;
     this.productService.getProducts().subscribe(
-      (data) => {this.productsCollection = data;
-        this.showPreloader = false; },
+      (data) => {
+        this.productsCollection = data;
+        this.showPreloader = false; 
+      },
       (error) => this.errorHandler(error)
     );
   }

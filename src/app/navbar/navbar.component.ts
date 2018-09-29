@@ -14,19 +14,28 @@ export class NavbarComponent implements OnInit {
   productCollection: any;
   faUser  = faUser;
   formInput: string;
-  service: any;
+  loggedUser: boolean;
   constructor(
     // private productService: ProductsService,
               private _authService: AuthService,
               private route: Router) { }
 
   ngOnInit() {
+    // debugger
+    // this._authService._state.subscribe(
+    //   state => this.isLoggedIn(state));
+
+    // this.loggedUser = this._authService.loggedIn();
+    this.loggedUser = !!localStorage.getItem('token');
     // this.productService.getProductParams().subscribe(
     //   (res) => this.renderNavBar(res)
     // );
-    this.service = this._authService
     this.navbarBehavior();
 
+  }
+  isLoggedIn(state) {
+    debugger
+    this.loggedUser = state;
   }
 
   navbarBehavior() {
@@ -66,6 +75,7 @@ export class NavbarComponent implements OnInit {
   renderNavBar(responce) {
     const res = responce;
   }
+  
   showProductsCollection(collection) {
     const scrolled = document.querySelector('.navbar_container').classList.contains('fixed_to_top');
     if (scrolled) {
@@ -75,6 +85,7 @@ export class NavbarComponent implements OnInit {
     }
     collection.classList.toggle('fade_in_navbar');
   }
+
   routeToSearch(input) {
     if (input.value.length >= 2) {
         this.route.navigate(['/search'], {queryParams: {value: input.value}});
@@ -86,4 +97,12 @@ export class NavbarComponent implements OnInit {
       }, 1000 );
     }
   }
+
+  logoutUser() {
+    this.loggedUser = false;
+    this._authService.logoutUser();
+    // this.loggedUser = this._authService.loggedIn();
+    // this.loggedUser = localStorage.getItem('token');
+  }
+
 }

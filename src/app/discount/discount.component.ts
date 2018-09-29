@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./discount.component.css']
 })
 export class DiscountComponent implements OnInit {
-  discountData = {};
+  discountData: any;
   constructor(
     private auth: AuthService,
     private router: Router
